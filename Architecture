@@ -1,1 +1,12 @@
+### Project Architecture
 
+This project follows a structured data engineering architecture to transform SAP financial data into meaningful business insights.
+
+Data is extracted from SAP source tables and processed using Azure Databricks. The data moves through the Bronze, Silver, and Gold layers following the Medallion Architecture.
+
+- **Bronze Layer:** Stores raw SAP financial data.
+- **Silver Layer:** Performs data cleaning, transformation, validation, and data integration.
+- **Gold Layer:** Contains business-ready fact and dimension tables for financial analysis.
+- **Power BI:** Connects to the Gold layer to create interactive dashboards and visualizations.
+
+The final dashboards provide insights into Management P&L, Cost Center Performance, Capex Analysis, and Journal Analysis.
