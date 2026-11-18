@@ -1,12 +1,41 @@
-### Project Architecture
+# Project Architecture
 
-This project follows a structured data engineering architecture to transform SAP financial data into meaningful business insights.
+This project follows a structured end-to-end data engineering architecture to transform SAP financial data into meaningful business insights.
 
-Data is extracted from SAP source tables and processed using Azure Databricks. The data moves through the Bronze, Silver, and Gold layers following the Medallion Architecture.
+Data is extracted from SAP source tables and processed using Azure Databricks. The data flows through three layers — Bronze, Silver, and Gold — following the Medallion Architecture.
 
-- **Bronze Layer:** Stores raw SAP financial data.
-- **Silver Layer:** Performs data cleaning, transformation, validation, and data integration.
-- **Gold Layer:** Contains business-ready fact and dimension tables for financial analysis.
-- **Power BI:** Connects to the Gold layer to create interactive dashboards and visualizations.
+## Data Processing Layers
 
-The final dashboards provide insights into Management P&L, Cost Center Performance, Capex Analysis, and Journal Analysis.
+### 1. Bronze Layer
+Stores raw SAP financial data extracted from the source tables without major transformations.
+
+### 2. Silver Layer
+Performs data cleaning, transformation, validation, and integration to ensure data quality and consistency.
+
+### 3. Gold Layer
+Contains business-ready fact and dimension tables designed for financial reporting and analysis.
+
+### 4. Power BI – Visualization
+Connects to the Gold layer to develop interactive dashboards and visualizations for business users.
+
+## Dashboard Modules
+
+The processed data supports four major analytical modules:
+
+- **Management P&L:** Financial performance and profitability analysis.
+- **Cost Center Performance:** Cost allocation and expenditure analysis.
+- **Capex Analysis:** Capital expenditure and asset-related analysis.
+- **Journal Analysis:** Journal volume, manual journal percentage, back-dated postings, and reversal rate analysis.
+
+## Technology Stack
+
+- Azure Databricks
+- SQL
+- PySpark
+- Medallion Architecture
+- Power BI
+
+---
+
+**Project:** Management P&L Dashboard  
+**Architecture:** Bronze → Silver → Gold → Power BI
